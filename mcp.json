@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "learn": {
+      "type": "stdio",
+      "command": "sh",
+      "args": ["-c", "cd \"$CLAUDE_PROJECT_DIR\" 2>/dev/null; exec node .claude/extensions/learn-server.mjs"],
+      "alwaysLoad": true
+    }
+  }
+}

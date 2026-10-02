@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS": "0"
+  },
+  "enabledMcpjsonServers": [
+    "learn"
+  ],
+  "permissions": {
+    "allow": [
+      "mcp__learn__quiz",
+      "mcp__learn__quiz_grade",
+      "mcp__learn__ask_user_question",
+      "mcp__visual-tools",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "AskUserQuestion"
+    ]
+  },
+  "statusLine": { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/statusline.mjs\"" },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"" }
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "mcp__learn__quiz|mcp__learn__quiz_grade|mcp__learn__ask_user_question|AskUserQuestion",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"" }
+        ]
+      }
+    ],
+    "Elicitation": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"", "async": true }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__learn__quiz|mcp__learn__quiz_grade|mcp__learn__ask_user_question|AskUserQuestion",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"", "async": true }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "mcp__learn__quiz|mcp__learn__quiz_grade|mcp__learn__ask_user_question|AskUserQuestion",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"", "async": true }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/extensions/md-log.mjs\"", "async": true }
+        ]
+      }
+    ]
+  }
+}

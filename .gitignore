@@ -15,4 +15,9 @@ __pycache__/
 
 # Runtime state
 .memory/
+.md-log/
 *.log
+
+# Claude Code per-user overrides
+settings.local.json
+scheduled_tasks.lock

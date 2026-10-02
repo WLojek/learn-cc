@@ -1,0 +1,17 @@
+{
+  "name": "@learn/extensions",
+  "version": "0.1.0",
+  "description": "learn, an AI learning system for Claude Code: MCP servers (quiz, ask_user_question, visual-tools for the diagram subagents) and the md-log hooks.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test --test-timeout=60000 test/*.test.mjs"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11.4.2",
+    "@modelcontextprotocol/sdk": "^1.31.0"
+  }
+}
