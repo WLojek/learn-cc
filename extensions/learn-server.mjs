@@ -35,4 +35,4 @@ const instructions = [
     .map((tool) => [`## ${tool.name}`, ...tool.promptGuidelines.map((g) => `- ${g}`)].join("\n")),
 ].join("\n\n")
 
-await serveTools({ name: "learn", version: "0.1.0", instructions, tools })
+await serveTools({ name: "learn", version: "1.0.0", instructions, tools })

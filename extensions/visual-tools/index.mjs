@@ -40,4 +40,4 @@ const groups = { mermaid: mermaidTools, svg: svgTools }
 const group = process.argv[2]
 const tools = groups[group] ?? [...mermaidTools, ...svgTools]
 
-await serveTools({ name: "visual-tools", version: "0.1.0", tools })
+await serveTools({ name: "visual-tools", version: "1.0.0", tools })

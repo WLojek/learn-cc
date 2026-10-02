@@ -1,6 +1,6 @@
 {
   "name": "@learn/extensions",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "learn, an AI learning system for Claude Code: MCP servers (quiz, ask_user_question, visual-tools for the diagram subagents) and the md-log hooks.",
   "type": "module",
   "private": true,
